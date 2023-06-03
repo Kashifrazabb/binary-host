@@ -1,0 +1,62 @@
+:root {
+    --main-color: dodgerblue;
+    --sub-color: white
+}
+
+#wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+
+label {
+    width: 6rem;
+    display: inline-block;
+}
+
+form {
+    width: fit-content;
+    display: inline-block;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: auto;
+    padding: 0.5rem 1rem;
+    background: var(--main-color);
+    color: var(--sub-color);
+    border: none;
+    box-shadow: none;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background: var(--main-color);
+    color: var(--sub-color);
+    border: none;
+    box-shadow: none;
+}
+
+#buttons {
+    text-align: center;
+}
+
+legend {
+    color: var(--main-color)
+}
+
+fieldset {
+    font-weight: bold;
+}
+
+select {
+    width: 6rem;
+    height: 2rem;
+    outline: none !important;
+}
+
+input {
+    outline: none !important;
+}

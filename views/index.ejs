@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Admin Panel</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <form action="/add-member" method="post">
+            <fieldset>
+                <legend>ADD NEW MEMBER</legend>
+                <label for="aplatform">Platform:</label>
+                <input type="text" id="aplatform" name="platform" value="qx"><br><br>
+                <label for="ausername">Username:</label>
+                <input type="text" id="ausername" name="username"><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="userid">UserID:</label>
+                <input type="number" id="userid" name="userid"><br><br>
+                <label for="flag">Flag:</label>
+                <input type="text" id="flag" name="flag"><br><br>
+                <label for="sig">Signature:</label>
+                <input type="text" id="sig" name="sig"><br><br>
+                <input type="submit" value="ADD">
+            </fieldset>
+        </form>
+        <br><br>
+        <% users.forEach(user=> { %>
+            <form method="post">
+                <fieldset>
+                    <legend>
+                        <% if (user.platform=="qx" ) { %>
+                            QUOTEX
+                            <% } %>
+                    </legend>
+                    <label>Userame:</label>
+                    <input type="text" name="username" value="<%= user.username %>"><br><br>
+                    <label>UserID:</label>
+                    <input type="number" name="userid" value="<%= user.userid %>"><br><br>
+                    <label>Email:</label>
+                    <input type="email" name="email" value="<%= user.email %>"><br><br>
+                    <label>Flag:</label>
+                    <input type="text" name="flag" value="<%= user.flag %>"><br><br>
+                    <label>Signature:</label>
+                    <textarea name="sig"><%= user.sig %></textarea><br><br>
+                    <input type="hidden" value="<%= user.id %>" name="id">
+                    <div id="buttons">
+                        <button type="submit" formaction="/update-member">UPDATE</button>
+                        <button type="submit" formaction="/delete-member">DELETE</button>
+                    </div>
+                </fieldset>
+            </form>
+            <% }) %>
+    </div>
+</body>
+
+</html>
