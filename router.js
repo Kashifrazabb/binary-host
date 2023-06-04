@@ -28,4 +28,10 @@ router.post("/update-member", (req, res) => {
         .then(user => res.redirect("/"))
 })
 
+router.get("/all", (req, res) => {
+    binaryModel.find({}).then(
+        users => res.json(users)
+    )
+})
+
 export default router
