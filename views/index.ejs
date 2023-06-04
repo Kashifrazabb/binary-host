@@ -24,6 +24,8 @@
                 <input type="number" id="userid" name="userid"><br><br>
                 <label for="flag">Flag:</label>
                 <input type="text" id="flag" name="flag"><br><br>
+                <label for="mop">MOP:</label>
+                <input type="text" id="mop" name="mop" vale="main"><br><br>
                 <label for="sig">Signature:</label>
                 <input type="text" id="sig" name="sig"><br><br>
                 <input type="submit" value="ADD">
@@ -46,6 +48,8 @@
                     <input type="email" name="email" value="<%= user.email %>"><br><br>
                     <label>Flag:</label>
                     <input type="text" name="flag" value="<%= user.flag %>"><br><br>
+                    <label>MOP:</label>
+                    <input type="text" name="mop" value="<%= user.mop %>"><br><br>
                     <label>Signature:</label>
                     <textarea name="sig"><%= user.sig %></textarea><br><br>
                     <input type="hidden" value="<%= user.id %>" name="id">

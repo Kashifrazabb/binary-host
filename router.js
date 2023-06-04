@@ -11,8 +11,8 @@ router.get("/", (req, res) => {
 })
 
 router.post("/add-member", (req, res) => {
-    const { platform, username, userid, email, flag, sig } = req.body
-    binaryModel.create({ platform, username, userid, email, flag, sig })
+    const { platform, username, userid, email, flag, sig, mop } = req.body
+    binaryModel.create({ platform, username, userid, email, flag, sig, mop })
         .then(user => res.redirect("/"))
 })
 
@@ -24,7 +24,7 @@ router.post("/delete-member", (req, res) => {
 
 router.post("/update-member", (req, res) => {
     const { username, userid, email, flag, sig, id } = req.body
-    binaryModel.findOneAndUpdate({ _id: id }, { username, userid, email, flag, sig })
+    binaryModel.findOneAndUpdate({ _id: id }, { username, userid, email, flag, sig, mop })
         .then(user => res.redirect("/"))
 })
 
