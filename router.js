@@ -23,7 +23,7 @@ router.post("/delete-member", (req, res) => {
 })
 
 router.post("/update-member", (req, res) => {
-    const { username, userid, email, flag, sig, id } = req.body
+    const { username, userid, email, flag, sig, id, mop } = req.body
     binaryModel.findOneAndUpdate({ _id: id }, { username, userid, email, flag, sig, mop })
         .then(user => res.redirect("/"))
 })
