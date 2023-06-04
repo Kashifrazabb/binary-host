@@ -29,9 +29,10 @@ router.post("/update-member", (req, res) => {
 })
 
 router.get("/all", (req, res) => {
-    binaryModel.find({}).then(
-        users => res.json(users)
-    )
+    var { platform, sig } = req.query
+    binaryModel.find({ sig, platform }).then(user => {
+        res.json(user)
+    })
 })
 
 export default router
