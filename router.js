@@ -1,6 +1,5 @@
 import { Router } from "express"
 import binaryModel from "./db.js"
-import biri from "biri"
 
 const router = Router()
 
