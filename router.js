@@ -1,9 +1,12 @@
 import { Router } from "express"
 import binaryModel from "./db.js"
+import biri from "biri"
 
 const router = Router()
 
+
 router.get("/", (req, res) => {
+    biri().then(id => console.log(id))
     binaryModel.find({}).then(users => {
         res.render("index", { users })
     })
