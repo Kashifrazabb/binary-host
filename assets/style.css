@@ -1,13 +1,14 @@
 :root {
-    --main-color: dodgerblue;
+    --main-color: #980028;
     --sub-color: white
 }
 
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
 #wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    text-align: center;
     margin-top: 3rem;
 }
 
@@ -59,4 +60,8 @@ select {
 
 input {
     outline: none !important;
+}
+
+#items form {
+    margin-bottom: 1rem;
 }
