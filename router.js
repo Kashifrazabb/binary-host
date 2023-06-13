@@ -35,6 +35,9 @@ router.get("/all", (req, res) => {
         if (user__type.includes(type)) {
             res.json(user)
         }
+        else {
+            res.json("")
+        }
     })
 })
 
