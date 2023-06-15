@@ -15,18 +15,20 @@
         <form action="/add-member" method="post">
             <fieldset>
                 <legend>ADD NEW MEMBER</legend>
-                <label for="aplatform">Platform:</label>
-                <input type="text" id="aplatform" name="platform" value="qx"><br><br>
                 <label for="ausername">Username:</label>
                 <input type="text" id="ausername" name="username"><br><br>
+                <label for="aplatform">Platform:</label>
+                <input type="text" id="aplatform" name="platform"><br><br>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email"><br><br>
                 <label for="userid">UserID:</label>
                 <input type="number" id="userid" name="userid"><br><br>
                 <label for="flag">Flag:</label>
                 <input type="text" id="flag" name="flag"><br><br>
-                <label for="sig">Signature:</label>
-                <input type="text" id="sig" name="sig"><br><br>
+                <label for="sig">Sig_M:</label>
+                <input type="text" id="sig" name="sig_m"><br><br>
+                <label for="sig">Sig_P:</label>
+                <input type="text" id="sig" name="sig_p"><br><br>
                 <input type="submit" value="ADD">
             </fieldset>
         </form>
@@ -34,27 +36,27 @@
         <div id="items">
             <% users.forEach(user=> { %>
                 <form method="post">
-                    <fieldset>
-                        <legend>
-                            MEMBER
-                        </legend>
+                    <fieldset id="field">
+                        <label>Userame:</label>
+                        <input type="text" name="username" value="<%= user.username %>" id="user"><br><br>
                         <label for="uplatform">Platform:</label>
                         <input type="text" id="uplatform" name="platform" value="<%= user.platform %>"><br><br>
-                        <label>Userame:</label>
-                        <input type="text" name="username" value="<%= user.username %>"><br><br>
                         <label>UserID:</label>
                         <input type="number" name="userid" value="<%= user.userid %>"><br><br>
                         <label>Email:</label>
                         <input type="email" name="email" value="<%= user.email %>"><br><br>
                         <label>Flag:</label>
                         <input type="text" name="flag" value="<%= user.flag %>"><br><br>
-                        <label>Signature:</label>
-                        <textarea name="sig"><%= user.sig %></textarea>
+                        <label>Sig_M:</label>
+                        <textarea name="sig_m"><%= user.sig_m %></textarea>
+                        <br><br>
+                        <label>Sig_P:</label>
+                        <textarea name="sig_p"><%= user.sig_p %></textarea>
                         <br><br>
                         <input type="hidden" value="<%= user.id %>" name="id">
                         <div id="buttons">
                             <button type="submit" formaction="/update-member">UPDATE</button>
-                            <button type="submit" formaction="/delete-member">DELETE</button>
+                            <button id="del_btn" type="submit" formaction="/delete-member">DELETE</button>
                         </div>
                     </fieldset>
                 </form>

@@ -65,3 +65,13 @@ input {
 #items form {
     margin-bottom: 1rem;
 }
+
+#user {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+#field {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}

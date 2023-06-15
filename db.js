@@ -12,7 +12,8 @@ const binarySchema = Schema({
     userid: { type: String },
     email: { type: String },
     flag: { type: String },
-    sig: { type: String }
+    sig_m: { type: String },
+    sig_p: { type: String }
 })
 
 const binaryModel = model('binaryModel', binarySchema)
