@@ -32,7 +32,7 @@ router.post("/update-member", (req, res) => {
 
 router.get("/all", (req, res) => {
     var { sig, type, isMobile } = req.query
-    if (Boolean(!isMobile)) { //If mobile
+    if (isMobile == "true") { //If mobile
         binaryModel.find({ sig_m: sig }).then(user => {
             var user__type = user[0].platform.slice(2);
             if (user__type.includes(type)) {
