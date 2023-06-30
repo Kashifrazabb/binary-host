@@ -56,7 +56,8 @@
                         <input type="hidden" value="<%= user.id %>" name="id">
                         <div id="buttons">
                             <button type="submit" formaction="/update-member">UPDATE</button>
-                            <button id="del_btn" type="submit" formaction="/delete-member">DELETE</button>
+                            <button id="del_btn" type="submit" formaction="/delete-member"
+                                onclick="return confirm('Are you sure you want to delete this item?');">DELETE</button>
                         </div>
                     </fieldset>
                 </form>
